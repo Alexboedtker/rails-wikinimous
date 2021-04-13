@@ -1,15 +1,17 @@
-<nav>
+<!-- <nav>
   <ul>
-    <li>Wikinimous</li>
+    <li><%= link_to 'Wikinimous', articles_path %></li>
     <li><%= link_to 'New Article', new_article_path %></li>
   </ul>
-</nav>
+</nav> -->
+<%= render "nav", article: @article %>
 <div class="container">
   <ul>
   <% @articles.each do |article| %>
     <li>
       <%= link_to article.title, article_path(article.id)  %>
     </li>
+    <li> <%= article.content %> </li>
   <% end %>
 </ul>
 </div>
